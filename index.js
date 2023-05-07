@@ -77,16 +77,7 @@ app.get('/api/persons/:id',(request,response,next) => {
   })
   .catch(error => next(error))
   })
-/*   const id = Number(request.params.id)
-  console.log(id)
-  const person = persons.find(person => person.id === id)
 
-  if (person) {
-    response.json(person)
-  }
-  else {
-    response.status(404).end()
-  } */
 
 
 app.delete('/api/persons/:id', (request, response, next) => {
@@ -153,33 +144,6 @@ app.post('/api/persons', (request, response) => {
   .catch(error => next(error))
 })
 
-/*   const check = persons.find(person => person.name.toLowerCase().trim() === body.name.toLowerCase().trim())
-  console.log(check)
-
-  if (check) {
-    return response.status(409).json({ 
-      error: 'name must be unique' 
-    })
-  }
-
-  else {
-    const person = {
-      id: generateId(),
-      name: body.name,
-      number: body.number
-    }
-    persons = persons.concat(person)
-    response.json(person)
-  } */
-
-/*   const person = new Person({
-    name: body.name,
-    number: body.number,
-  })
-
-  person.save().then(savedPerson => {
-    response.json(savedPerson)
-  }) */
 
 app.put('/api/persons/:id', (request, response, next) => {
   const body = request.body
